@@ -1,0 +1,9 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int[] filtered = IntStream.of(nums)
+                                  .filter(n -> n != val)
+                                  .toArray();
+        System.arraycopy(filtered, 0, nums, 0, filtered.length);
+        return filtered.length;
+    }
+}
